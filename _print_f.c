@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			switch(*format)
+			switch (*format)
 			{
 				case '%':
 					char_count += _print_prc();
@@ -39,6 +39,12 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					char_count += _print_int(args);
+					break;
+				case 'i':
+					char_count += _print_int(args);
+					break;
+				case 'b':
+					char_count += _print_unsig(args);
 					break;
 			}
 		}

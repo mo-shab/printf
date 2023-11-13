@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int _printf(const char *format, ...);
 
@@ -11,4 +12,5 @@ int _print_prc(void);
 int _print_char(va_list args);
 int _print_str(va_list args);
 int _print_int(va_list args);
+int _print_unsig(va_list arg);
 #endif

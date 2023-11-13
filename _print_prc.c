@@ -2,11 +2,10 @@
 
 /**
 * _print_prc - function to print %
-* @args: the arg passed
 * Return: 1
 */
 
-int _print_prc()
+int _print_prc(void)
 {
 
 	write(1, "%%", 1);

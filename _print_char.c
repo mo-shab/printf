@@ -2,7 +2,6 @@
 /**
 * _print_char - print a characher
 * @args: list of args passed to the function
-* @format: the caracter to print
 * Return: number of char printed
 */
 
