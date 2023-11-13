@@ -26,22 +26,18 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-		if (*format == '\0')
-			break;
-
-		if (*format == '%')
-		{
-			write(1, "%%", 1);
-			char_count++;
-		}
-		else if (*format == 'c')
-		{
-			char_count += _print_char(args);
-		}
-		else if (*format == 's')
-		{
-			char_count += _print_str(args);
-		}
+			switch(*format)
+			{
+				case '%':
+					char_count += _print_prc();
+					break;
+				case 'c':
+					char_count += _print_char(args);
+					break;
+				case 's':
+					char_count += _print_str(args);
+					break;
+			}
 		}
 		format++;
 	}
