@@ -37,6 +37,9 @@ int _printf(const char *format, ...)
 				case 's':
 					char_count += _print_str(args);
 					break;
+				case 'd':
+					char_count += _print_int(args);
+					break;
 			}
 		}
 		format++;
