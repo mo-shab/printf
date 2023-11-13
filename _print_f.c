@@ -19,17 +19,16 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (format != '\0')
+	while (*format != '\0')
 	{
 		if (*format != '%')
 		{
-			write(1, fromat, 1);
+			write(1, format, 1);
 			char_count++;
 		}
 		else
 		{
 			format++;
-		}
 		if (*format == '\0')
 			break;
 
@@ -40,20 +39,22 @@ int _printf(const char *format, ...)
 		}
 		else if (*format == 'c')
 		{
-			char cha = var_arg(args, int);
+			char c = va_arg(args, int);
 
+			write(1, &c, 1);
 			char_count++;
 		}
 		else if (*format == 's')
 		{
-			char *str = var_arg(args, char*);
+			char *str = va_arg(args, char*);
 
 			write(1, str, strlen(str));
 			char_count += strlen(str);
 		}
+		}
 		format++;
 	}
-	var_end(arg);
+	va_end(args);
 
-	return (cha_count);
+	return (char_count);
 }
