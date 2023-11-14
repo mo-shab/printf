@@ -12,15 +12,15 @@ int _printf(const char *format, ...)
 	int count = 0, specifierIndex;
 	va_list args;
 	type diftype[] = {{'c', _print_char}, {'s', _print_str}, {'d', _print_int},
-{'i', _print_i}};
+{'i', _print_i}, {'b', _print_binary}};
 
 if (format == NULL)
 	return (-1);
-	va_start(args, format);
-	while (*format != '\0')
-	{
-		if (*format != '%')
-			count += _putchar(*format);
+va_start(args, format);
+while (*format != '\0')
+{
+	if (*format != '%')
+		count += _putchar(*format);
 else
 {
 format++;
@@ -29,7 +29,7 @@ format++;
 			else
 			{
 				specifierIndex = 0;
-				while (specifierIndex < 4)
+				while (specifierIndex < 5)
 				{
 					if (*format == diftype[specifierIndex].op)
 					{

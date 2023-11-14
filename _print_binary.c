@@ -8,7 +8,8 @@
 int _print_binary(va_list args)
 {
 unsigned int b = va_arg(args, unsigned int);
-int bin;
+int j, count = 0;
+int tab[100];
 
 if (b == 0)
 {
@@ -17,8 +18,11 @@ return (1);
 }
 while (b > 0)
 {
-bin = b %2;
+tab[count] = b % 2;
 b = b / 2;
+count++;
 }
-return (_print_int(bin));
+for (j = count - 1; j >= 0; j--)
+_putchar(tab[j] + '0');
+return (count);
 }
