@@ -9,14 +9,20 @@
 int _print_str(va_list args)
 {
 	int str_len = 0, i = 0;
-	char *str = va_arg(args, char*);
+	char nul[] = "(NULL)";
+	char *str = va_arg(args, char *);
 
+	if (str == NULL)
+	{
+		while (nul[i] != '\0')
+			_putchar(nul[i++]);
+		return (6);
+	}
 	while (str[i] != '\0')
 	{
+		_putchar(str[str_len]);
 		str_len++;
-		i++;
 	}
-	write(1, str, str_len);
 
 	return (str_len);
 }

@@ -1,56 +1,44 @@
 #include "main.h"
 
 /**
- * _printf - Function that produces output according to a format
- * @format: caracthere sting
- *
- * Return: number of char printed
- * -1 if format == NULL
- */
+ * _printf - Function to print according to a format
+ * @format: The First argument
+ * 
+ * Return: Count of how many charachter were printed
+*/
 
 int _printf(const char *format, ...)
 {
-	int char_count = 0;
-	va_list args;
+    int count, spe;
+    va_list args;
+    type diftype[] = {{'c', _print_char}, {'s', _print_str}}
+    count = 0;
 
-	if (format == NULL)
-		return (-1);
-	va_start(args, format);
-	while (*format != '\0')
-	{
-		if (*format != '%')
-		{
-			write(1, format, 1);
-			char_count++;
-		}
-		else
-		{
-			format++;
-			switch (*format)
-			{
-				case '%':
-					char_count += _print_prc();
-					break;
-				case 'c':
-					char_count += _print_char(args);
-					break;
-				case 's':
-					char_count += _print_str(args);
-					break;
-				case 'd':
-					char_count += _print_int(args);
-					break;
-				case 'i':
-					char_count += _print_int(args);
-					break;
-				case 'b':
-					char_count += _print_unsig(args);
-					break;
-			}
-		}
-		format++;
-	}
-	va_end(args);
-
-	return (char_count);
+    if (format == NULL)
+    {
+        return (-1);
+    }
+    va_start(args, format);
+    while(*format != '\0')
+    {
+        if (*format != '%')
+            count += -_print_char(format);
+        else
+        {
+            format++;
+            if(format == '%')
+                count += _putchar('%');
+            spe = 0;
+            while (spe < 2)
+            {
+                if (format == diftype[spe].op)
+                {
+                    count += diftype[spe]->fun(args);
+                    break;
+                }
+                spe++;
+            }
+        }
+        format++;
+    }
 }
