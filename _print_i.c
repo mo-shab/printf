@@ -10,7 +10,7 @@ int _print_i(va_list args)
 {
 int i = va_arg(args, int);
 char buffer[12];
-int len = sprintf(buffer, "%d", i);
+int len = sprintf(buffer, "%i", i);
 
 write(1, buffer, len);
 
