@@ -8,30 +8,11 @@
 
 int _print_int(va_list args)
 {
-int n = va_arg(args, int);
-int len = 0;
-int divisor = 1;
-int temp = n;
+int i = va_arg(args, int);
+char buffer[12];
+int len = sprintf(buffer, "%d", i);
 
-if (n < 0)
-{
-len++;
-_putchar('-');
-n = -n;
-}
-temp = n;
-while (temp > 9)
-{
-divisor *= 10;
-temp /= 10;
-}
-while (divisor > 0)
-{
-_putchar((n / divisor) +'0');
-len++;
-n %= divisor;
-divisor /= 10;
-}
+write(1, buffer, len);
 
 return (len);
 }
