@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
 	int count = 0, specifierIndex;
 	va_list args;
 	type diftype[] = {{'c', _print_char}, {'s', _print_str}, {'d', _print_int},
-{'i', _print_i}, {'b', _print_binary}};
+{'i', _print_i}, {'b', _print_binary}, {'u', _print_unsig}, {'o', _print_octal},
+{'x', _print_hexa}, {'X', _print_hexa_upper}};
 
 if (format == NULL)
 	return (-1);
@@ -29,7 +30,7 @@ format++;
 			else
 			{
 				specifierIndex = 0;
-				while (specifierIndex < 5)
+				while (specifierIndex < 9)
 				{
 					if (*format == diftype[specifierIndex].op)
 					{
