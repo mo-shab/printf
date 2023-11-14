@@ -9,36 +9,53 @@
 
 int _printf(const char *format, ...)
 {
-    int count, spe;
+    int count, specifierIndex;
     va_list args;
-    type diftype[] = {{'c', _print_char}, {'s', _print_str}}
+    type diftype[] = {{'c', _print_char}, {'s', _print_str}};
     count = 0;
 
     if (format == NULL)
     {
         return (-1);
     }
+
     va_start(args, format);
-    while(*format != '\0')
+
+    while (*format != '\0')
     {
         if (*format != '%')
-            count += -_print_char(format);
+        {
+            count += _putchar(*format);
+        }
         else
         {
             format++;
-            if(format == '%')
-                count += _putchar('%');
-            spe = 0;
-            while (spe < 2)
+            if (*format == '%')
             {
-                if (format == diftype[spe].op)
+                count += _putchar('%');
+            }
+            else
+            {
+                specifierIndex = 0;
+                while (specifierIndex < 2)
                 {
-                    count += diftype[spe]->fun(args);
-                    break;
+                    if (*format == diftype[specifierIndex].op)
+                    {
+                        count += diftype[specifierIndex].fun(args);
+                        break;
+                    }
+                    specifierIndex++;
                 }
-                spe++;
+                if (specifierIndex == 2)
+                {
+                    va_end(args);
+                    return (-1);
+                }
             }
         }
         format++;
     }
+
+    va_end(args);
+    return (count);
 }

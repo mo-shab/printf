@@ -15,10 +15,12 @@ int _print_str(va_list args)
 	if (str == NULL)
 	{
 		while (nul[i] != '\0')
-			_putchar(nul[i++]);
+		{	_putchar(nul[i]);
+			i++;
+		}
 		return (6);
 	}
-	while (str[i] != '\0')
+	while (str[str_len] != '\0')
 	{
 		_putchar(str[str_len]);
 		str_len++;

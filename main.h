@@ -3,6 +3,9 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
 
 /**
  * struct types_args - Struct to choose an operation
