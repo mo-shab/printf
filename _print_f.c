@@ -11,8 +11,7 @@ int _printf(const char *format, ...)
 {
 	int count = 0, specifierIndex;
 	va_list args;
-	type diftype[] = {{'c', _print_char}, {'s', _print_str}};
-
+	type diftype[] = {{'c', _print_char}, {'s', _print_str}, {'d', _print_int}, {'i', _print_int}};
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
@@ -28,7 +27,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				specifierIndex = 0;
-				while (specifierIndex < 2)
+				while (specifierIndex < 4)
 				{
 					if (*format == diftype[specifierIndex].op)
 					{
