@@ -2,7 +2,7 @@
 /**
  * _print_int - function to print an integer
  * @args: the argument
- * 
+ *
  * Return: Number of charachter printed
 */
 
@@ -27,7 +27,7 @@ temp /= 10;
 }
 while (divisor > 0)
 {
-_putchar((n / divisor) + '0');
+_putchar((n / divisor) +'0');
 len++;
 n %= divisor;
 divisor /= 10;

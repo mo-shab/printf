@@ -11,17 +11,19 @@ int _printf(const char *format, ...)
 {
 	int count = 0, specifierIndex;
 	va_list args;
-	type diftype[] = {{'c', _print_char}, {'s', _print_str}, {'d', _print_int}, {'i', _print_int}};
-	if (format == NULL)
-		return (-1);
+	type diftype[] = {{'c', _print_char}, {'s', _print_str}, {'d', _print_int},
+{'i', _print_i}};
+
+if (format == NULL)
+	return (-1);
 	va_start(args, format);
 	while (*format != '\0')
 	{
 		if (*format != '%')
 			count += _putchar(*format);
-		else
-		{
-            format++;
+else
+{
+format++;
 			if (*format == '%')
 				count += _putchar('%');
 			else
