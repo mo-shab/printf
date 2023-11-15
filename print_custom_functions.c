@@ -5,7 +5,7 @@
  * (0 < ASCII value < 32 or >= 127) are
  * _printed this way: \x, followed by the ASCII code
  * value in hexadecimal (upper case - always 2 characters)
- * @l: va_list args from __printf
+ * @args: va_list args from __printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to __printf
  * Return: number of char _printed
@@ -39,7 +39,7 @@ int _print_bigS(va_list args, flags_t *f)
 
 /**
  * _print_rev - _prints a string in reverse
- * @l: argument from __printf
+ * @args: argument from __printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to __printf
  * Return: length of the _printed string
@@ -64,7 +64,7 @@ int _print_rev(va_list args, flags_t *f)
 
 /**
  * _print_rot13 - _prints a string using rot13
- * @l: list of args from __printf
+ * @args: list of args from __printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to __printf
  * Return: length of the _printed string
@@ -96,7 +96,7 @@ int _print_rot13(va_list args, flags_t *f)
 
 /**
  * _print_percent - Prints a percent symbol
- * @l: va_list args from _printf
+ * @args: va_list args from _printf
  * @f: Pointer to the struct flags in which we turn the flags on
  * Return: Number of characters printed
  */

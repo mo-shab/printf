@@ -2,7 +2,7 @@
 
 /**
  * _print_int - Prints an integer
- * @l: va_list of args from _printf
+ * @args: va_list of args from _printf
  * @f: Pointer to the struct flags determining if a flag is passed to _printf
  * Return: Number of characters printed
  */
@@ -23,7 +23,7 @@ int _print_int(va_list args, flags_t *f)
 
 /**
  * _print_unsigned - Prints an unsigned integer
- * @l: va_list of args from _printf
+ * @args: va_list of args from _printf
  * @f: Pointer to the struct flags determining if a flag is passed to _printf
  * Return: Number of characters printed
  */

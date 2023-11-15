@@ -31,14 +31,11 @@ int _printf(const char *format, ...)
 			while (get_flag(*p, &flags))
 				p++;
 			p_func = get_print(*p);
-			count += (p_func)
-				? p_func(args, &flags)
-				:_printf("%%%c", *p);
+			count += (p_func) ? p_func(args, &flags) : _printf("%%%c", *p);
 		} else
 			count += _putchar(*p);
 	}
 	_putchar(-1);
 	va_end(args);
 	return (count);
-
 }

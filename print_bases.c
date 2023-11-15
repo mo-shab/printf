@@ -3,7 +3,7 @@
 /**
  * _print_hex - _prints a number in hexadecimal base,
  * in lowercase
- * @l: va_list args from __printf
+ * @args: va_list args from __printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to __printf
  * Description: the function calls convert() which in turns converts the input
@@ -25,7 +25,7 @@ int _print_hex(va_list args, flags_t *f)
 /**
  * _print_hex_big - _prints a number in hexadecimal base,
  * in uppercase
- * @l: va_list args from __printf
+ * @args: va_list args from __printf
  * @f: pointer to the struct that determines
  * if a flag is passed to __printf
  * Description: the function calls convert() which in turns converts the input
@@ -46,7 +46,7 @@ int _print_hex_big(va_list args, flags_t *f)
 
 /**
  * _print_binary - _prints a number in base 2
- * @l: va_list args from __printf
+ * @args: va_list args from __printf
  * @f: pointer to the struct that determines
  * if a flag is passed to __printf
  * Description: the function calls convert() which in turns converts the input
@@ -64,7 +64,7 @@ int _print_binary(va_list args, flags_t *f)
 
 /**
  * _print_octal - _prints a number in base 8
- * @l: va_list args from __printf
+ * @args: va_list args from __printf
  * @f: pointer to the struct that determines
  * if a flag is passed to __printf
  * Description: the function calls convert() which in turns converts the input
