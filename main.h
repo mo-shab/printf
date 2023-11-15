@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * @struct flags - Holds flags to enable specific behaviors in __printf()
@@ -37,7 +38,7 @@ void _print_number(int n);
 int _print_unsigned(va_list args, flags_t *f);
 int count_digit(int i);
 int _print_hex(va_list args, flags_t *f);
-int _print_hex_big(va_list args, flags_t *f);
+int _print_hex_upper(va_list args, flags_t *f);
 int _print_binary(va_list args, flags_t *f);
 int _print_octal(va_list args, flags_t *f);
 char *convert(unsigned long int num, int base, int lowercase);
@@ -50,7 +51,7 @@ int _putchar(char c);
 int _puts(char *str);
 int _print_rot13(va_list args, flags_t *f);
 int _print_rev(va_list args, flags_t *f);
-int _print_bigS(va_list args, flags_t *f);
+int _print_upperS(va_list args, flags_t *f);
 int _print_address(va_list args, flags_t *f);
 int _print_percent(va_list args, flags_t *f);
 

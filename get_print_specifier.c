@@ -16,12 +16,12 @@ int (*get_print(char s))(va_list, flags_t *)
 		{'d', _print_int},
 		{'u', _print_unsigned},
 		{'x', _print_hex},
-		{'X', _print_hex_big},
+		{'X', _print_hex_upper},
 		{'b', _print_binary},
 		{'o', _print_octal},
 		{'R', _print_rot13},
 		{'r', _print_rev},
-		{'S', _print_bigS},
+		{'S', _print_upperS},
 		{'p', _print_address},
 		{'%', _print_percent}
 		};

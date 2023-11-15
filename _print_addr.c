@@ -11,8 +11,7 @@ int _print_address(va_list args, flags_t *f)
 {
 	char *str;
 	unsigned long int p = va_arg(args, unsigned long int);
-
-	register int count = 0;
+	int count = 0;
 
 	(void)f;
 

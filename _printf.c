@@ -10,8 +10,7 @@ int _printf(const char *format, ...)
 	const char *p;
 	va_list args;
 	flags_t flags = {0, 0, 0};
-
-	register int count = 0;
+	int count = 0;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
